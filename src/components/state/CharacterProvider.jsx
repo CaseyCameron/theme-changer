@@ -7,7 +7,7 @@ export const CharacterProvider = ({ children }) => {
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    fetchRickAndMorty().then(setCharacters);
+    fetchRickAndMorty().then(res => setCharacters(res));
   }, []);
 
   return (
@@ -15,5 +15,9 @@ export const CharacterProvider = ({ children }) => {
       {children}
     </CharacterContext.Provider>
   );
+};
 
+export const useCharacters = () => {
+  const { characters } = useContext(CharacterContext);
+  return characters;
 };

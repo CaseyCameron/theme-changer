@@ -1,10 +1,13 @@
 import React from 'react';
+import CharacterList from '../characters/CharacterList';
+import Header from '../common/Header';
 import Wrapper from '../common/Wrapper';
 
 export default function App() {
   return (
     <Wrapper>
-      <h1>Home Page</h1>
+      <Header />
+      <CharacterList />
     </Wrapper>
   );
 }
