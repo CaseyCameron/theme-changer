@@ -1,18 +1,23 @@
-// import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
-// const ThemeContext = createContext();
+const ThemeContext = createContext();
 
-// export const ThemeProvider = ({ children }) => {
-//   const [themes, setThemes] = useState([]);
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState('false');
 
-//   return (
-//     <ThemeContext.Provider value={{ themes }}>
-//       {children}
-//     </ThemeContext.Provider>
-//   );
-// };
+  const handleTheme = ({ target }) => {
+    setTheme(target.value);
+  };
 
-// export const useCharacters = () => {
-//   const { themes } = useContext(ThemeContext);
-//   return themes;
-// };
+  return (
+    <ThemeContext.Provider value={{ theme, handleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+export const useSetTheme = () => {
+  const { theme, handleTheme } = useContext(ThemeContext);
+  console.log(theme);
+  return theme, handleTheme;
+};

@@ -1,22 +1,34 @@
 import React from 'react';
+import { useSetTheme } from '../state/ThemeProvider';
+import Wrapper from './Wrapper';
 
-const headerStyle = {
-  border: '1px solid black',
-};
+const Header = () => {
+  const handleTheme = useSetTheme();
+  const headerStyle = {
+    border: '1px solid black',
+  };
 
-const radioStyle = {
-  
-};
+  const radioStyle = {
 
-export default function Header() {
+  };
+
   return (
-    <header style={headerStyle}>
-      <h1>Home Page</h1>
-      <form>
+    <Wrapper>
+      <header style={headerStyle}>
+        <h1>Home Page</h1>
         <div style={radioStyle}>
-
+          <label>
+            <input name="theme" type="radio" value="false" onChange={handleTheme} />
+            Light Theme
+          </label>
+          <label>
+            <input name="theme" type="radio" value="true" onChange={handleTheme} />
+            Dark Theme
+          </label>
         </div>
-      </form>
-    </header >
+      </header>
+    </Wrapper>
   );
-}
+};
+
+export default Header;
