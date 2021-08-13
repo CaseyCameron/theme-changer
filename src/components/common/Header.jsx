@@ -3,7 +3,7 @@ import { useSetTheme } from '../state/ThemeProvider';
 import Wrapper from './Wrapper';
 
 const Header = () => {
-  const handleTheme = useSetTheme();
+  const { handleTheme } = useSetTheme();
   const headerStyle = {
     border: '1px solid black',
   };
@@ -18,11 +18,11 @@ const Header = () => {
         <h1>Home Page</h1>
         <div style={radioStyle}>
           <label>
-            <input name="theme" type="radio" value="false" onChange={handleTheme} />
+            <input name="theme" type="radio" value="white" onChange={handleTheme} />
             Light Theme
           </label>
           <label>
-            <input name="theme" type="radio" value="true" onChange={handleTheme} />
+            <input name="theme" type="radio" value="gray" onChange={handleTheme} />
             Dark Theme
           </label>
         </div>

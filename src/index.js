@@ -5,10 +5,10 @@ import { CharacterProvider } from '../src/components/state/CharacterProvider';
 import { ThemeProvider } from '../src/components/state/ThemeProvider';
 
 render(
-  <CharacterProvider>
-    <ThemeProvider>
+  <ThemeProvider>
+    <CharacterProvider>
       <App />
-    </ThemeProvider>
-  </CharacterProvider>,
+    </CharacterProvider>
+  </ThemeProvider>,
   document.getElementById('root')
 );

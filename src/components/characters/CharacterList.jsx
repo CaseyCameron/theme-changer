@@ -2,20 +2,18 @@ import React from 'react';
 import Character from './Character';
 import { useCharacters } from '../state/CharacterProvider';
 import { useSetTheme } from '../state/ThemeProvider';
-import Wrapper from '../common/Wrapper';
 
 const CharacterList = () => {
   const characters = useCharacters();
   const { theme } = useSetTheme();
-  console.log(theme);
 
   const characterElements = characters.map(character => (
-    <li key={character.name}>
+    <li key={character.name} style={{ listStyle: 'none', }}>
       <Character {...character} />
     </li>
   ));
 
-  return <Wrapper><ul>{characterElements}</ul></Wrapper>;
+  return <div style={{ backgroundColor: `${theme}` }}><ul>{characterElements}</ul></div>;
 };
 
 export default CharacterList;
