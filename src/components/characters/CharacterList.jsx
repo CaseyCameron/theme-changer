@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../common/Button';
 import Character from './Character';
 import { useCharacters } from '../state/CharacterProvider';
 import { useSetTheme } from '../state/ThemeProvider';
@@ -13,7 +14,13 @@ const CharacterList = () => {
     </li>
   ));
 
-  return <div style={{ backgroundColor: `${theme}` }}><ul>{characterElements}</ul></div>;
+  return (
+    <div style={{ backgroundColor: `${theme}` }}>
+      <Button>←</Button>
+      <Button>→</Button>
+      <ul>{characterElements}</ul>
+    </div>
+  );
 };
 
 export default CharacterList;
