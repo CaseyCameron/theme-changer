@@ -4,21 +4,18 @@ import Wrapper from './Wrapper';
 
 const Header = () => {
   const { handleTheme } = useSetTheme();
+
   const headerStyle = {
     border: '1px solid black',
-  };
-
-  const radioStyle = {
-
   };
 
   return (
     <Wrapper>
       <header style={headerStyle}>
         <h1>Home Page</h1>
-        <div style={radioStyle}>
+        <div>
           <label>
-            <input name="theme" type="radio" value="white" onChange={handleTheme} />
+            <input name="theme" type="radio" value="white" defaultChecked onChange={handleTheme} />
             Light Theme
           </label>
           <label>
